@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:posts_app_demo/router.dart';
-import 'package:posts_app_demo/ui/post_comments.dart';
 import 'package:posts_app_demo/ui/posts_screen.dart';
 
 void main() {
@@ -14,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       navigatorKey: _navigatorKey,
       initialRoute: PostsPage.postsRoute,
       routes: AppRoutes.routes,
