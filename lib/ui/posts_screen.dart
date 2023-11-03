@@ -17,26 +17,28 @@ class _PostsPageState extends State<PostsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Scaffold(
-          body: FutureBuilder<List<Post>>(
-            future: _postsRepository.fetchPosts(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(
-                  child: CircularProgressIndicator(
-                    strokeWidth: .5,
-                  ),
-                );
-              } else {
-                final posts = snapshot.data;
-                return PostsLayout(
-                  posts: posts ?? [],
-                );
-              }
-            },
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Scaffold(
+            body: FutureBuilder<List<Post>>(
+              future: _postsRepository.fetchPosts(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                    child: CircularProgressIndicator(
+                      strokeWidth: .5,
+                    ),
+                  );
+                } else {
+                  final posts = snapshot.data;
+                  return PostsLayout(
+                    posts: posts ?? [],
+                  );
+                }
+              },
+            ),
           ),
         ),
       ),

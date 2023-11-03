@@ -76,33 +76,33 @@ class _PostCommentsState extends State<PostComments> {
         child: Text(''),
       ),
       elevation: 7,
-      expandedHeight: 400,
+      expandedHeight: 200,
       flexibleSpace: FlexibleSpaceBar(
+        titlePadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         expandedTitleScale: 1.1,
         centerTitle: true,
-        title: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 40),
+        title: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Expanded(
-                child: MyRichText(
-                    textAlign: TextAlign.center,
-                    description: '',
-                    item: StringExtension(widget.post.title ?? '').capitalize(),
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
+              MyRichText(
+                  textAlign: TextAlign.center,
+                  description: '',
+                  item: StringExtension(widget.post.title ?? '').capitalize(),
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+              const SizedBox(
+                height: 10,
               ),
-              Expanded(
-                child: MyRichText(
-                    textAlign: TextAlign.center,
-                    description: '',
-                    item: StringExtension(widget.post.body ?? '').capitalize(),
-                    fontSize: 13,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.black),
-              ),
+              MyRichText(
+                  textAlign: TextAlign.center,
+                  description: '',
+                  item: StringExtension(widget.post.body ?? '').capitalize(),
+                  fontSize: 13,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black),
             ],
           ),
         ),
