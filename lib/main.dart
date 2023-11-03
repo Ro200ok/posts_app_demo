@@ -1,39 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:posts_app_demo/router.dart';
+import 'package:posts_app_demo/ui/post_comments.dart';
+import 'package:posts_app_demo/ui/posts_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
+final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: _navigatorKey,
+      initialRoute: PostsPage.postsRoute,
+      routes: AppRoutes.routes,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-      ),
-      home: const PostsPage(),
-    );
-  }
-}
-
-class PostsPage extends StatefulWidget {
-  const PostsPage({super.key});
-
-  @override
-  State<PostsPage> createState() => _PostsPageState();
-}
-
-class _PostsPageState extends State<PostsPage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('1232131'),
       ),
     );
   }
