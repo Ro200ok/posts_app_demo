@@ -22,7 +22,6 @@ class PostsLayout extends StatelessWidget {
                     .pushNamed(PostComments.postCommentsroute, arguments: post);
               },
               title: MyRichText(
-                  description: '',
                   item: StringExtension(post.title ?? '').capitalize(),
                   fontSize: 18,
                   fontWeight: FontWeight.w600,

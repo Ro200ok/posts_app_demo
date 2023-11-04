@@ -88,7 +88,6 @@ class _PostCommentsState extends State<PostComments> {
             children: [
               MyRichText(
                   textAlign: TextAlign.center,
-                  description: '',
                   item: StringExtension(widget.post.title ?? '').capitalize(),
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -98,7 +97,6 @@ class _PostCommentsState extends State<PostComments> {
               ),
               MyRichText(
                   textAlign: TextAlign.center,
-                  description: '',
                   item: StringExtension(widget.post.body ?? '').capitalize(),
                   fontSize: 13,
                   fontWeight: FontWeight.normal,

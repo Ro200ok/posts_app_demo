@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyRichText extends StatelessWidget {
   const MyRichText(
       {super.key,
-      required this.description,
+      this.description = '',
       required this.item,
       required this.fontSize,
       required this.fontWeight,
