@@ -15,6 +15,7 @@ class CommentItem extends StatelessWidget {
     final email = comment.email;
     final name = comment.name;
     final postId = comment.postId;
+    double cWidth = MediaQuery.of(context).size.width * 0.8;
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -40,9 +41,9 @@ class CommentItem extends StatelessWidget {
                 ),
                 VertiacalPadding(
                   child: MyRichText(
+                      textStyle: Theme.of(context).textTheme.bodySmall,
                       description: 'Comment id: ',
                       item: id.toString(),
-                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.red),
                 ),
@@ -51,26 +52,23 @@ class CommentItem extends StatelessWidget {
           ),
           VertiacalPadding(
             child: MyRichText(
+                textStyle: Theme.of(context).textTheme.bodySmall,
                 description: 'Name: ',
                 item: StringExtension(name ?? '').capitalize(),
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
                 color: Colors.lightGreen),
           ),
           VertiacalPadding(
             child: MyRichText(
+                textStyle: Theme.of(context).textTheme.bodySmall,
                 description: 'Email: ',
                 item: email ?? '',
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
                 color: Colors.grey),
           ),
           VertiacalPadding(
             child: MyRichText(
+                textStyle: Theme.of(context).textTheme.bodySmall,
                 description: 'Body: ',
                 item: StringExtension(body ?? '').capitalize(),
-                fontSize: 19,
-                fontWeight: FontWeight.normal,
                 color: Colors.blueGrey),
           ),
         ],

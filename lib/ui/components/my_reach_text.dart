@@ -5,15 +5,17 @@ class MyRichText extends StatelessWidget {
       {super.key,
       this.description = '',
       required this.item,
-      required this.fontSize,
-      required this.fontWeight,
-      required this.color,
-      this.textAlign});
+      this.fontSize,
+      this.fontWeight,
+      this.color,
+      this.textAlign,
+      this.textStyle});
 
   final String? description;
-  final String item;
-  final double fontSize;
-  final FontWeight fontWeight;
+  final TextStyle? textStyle;
+  final String? item;
+  final double? fontSize;
+  final FontWeight? fontWeight;
   final Color? color;
   final TextAlign? textAlign;
 
@@ -31,6 +33,8 @@ class MyRichText extends StatelessWidget {
               fontWeight: fontWeight, fontSize: fontSize, color: color),
         )
       ]),
+      textScaleFactor: .9,
+      maxLines: 4,
       textAlign: textAlign,
     );
   }

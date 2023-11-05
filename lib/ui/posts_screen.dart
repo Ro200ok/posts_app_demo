@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:posts_app_demo/models/post/post.dart';
 import 'package:posts_app_demo/repositories/posts_repository.dart';
-import 'package:posts_app_demo/ui/post_comments.dart';
 import 'package:posts_app_demo/ui/widgets/posts_layout.dart';
 
 class PostsPage extends StatefulWidget {
